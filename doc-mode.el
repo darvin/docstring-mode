@@ -218,23 +218,23 @@ undetermined content should be created with `doc-mode-new-keyword'."
             "verbinclude" "version" "weakgroup" "xmlonly" "xrefitem" "$" "@"
             "\\" "&" "~" "<" ">" "#" "%") t)
          "\\>")
-       (0 font-lock-keyword-face prepend))
+       (0 font-lock-pseudo-keyword-face prepend))
       ;; don't highlight \n, it's too common in code
       ("@n" (0 font-lock-keyword-face prepend))
       (,(concat "\\([@\\]"
          (regexp-opt '("class" "struct" "union" "exception" "enum" "throw"
                        "throws") t)
          "\\)\\>\\(?:[ \t]+\\(\\sw+\\)\\)?")
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (3 font-lock-type-face prepend))
       (,(concat "\\([@\\]"
          (regexp-opt '("param" "param[in]" "param[out]" "param[in+out]" "a"
                        "namespace" "relates" "relatesalso" "def") t)
          "\\)\\>\\(?:[ \t]+\\(\\sw+\\)\\)?")
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (3 font-lock-variable-name-face prepend))
       (,(concat "\\([@\\]retval\\)\\>\\(?:[ \t]+\\(\\sw+\\)\\)?")
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (2 font-lock-function-name-face prepend))
       (,(concat "[@\\]" (regexp-opt '("attention" "warning" "todo" "bug") t)
                 "\\>")
@@ -242,15 +242,15 @@ undetermined content should be created with `doc-mode-new-keyword'."
       (,(concat "{@"
          (regexp-opt '("docRoot" "inheritDoc" "link" "linkplain" "value") t)
          "}")
-       (0 font-lock-keyword-face prepend))
+       (0 font-lock-pseudo-keyword-face prepend))
       ("\\([@\\]b\\)[ \t\n]+\\([^ \t\n]+\\)"
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (2 'bold prepend))
       ("\\([@\\]em?\\)[ \t\n]+\\([^ \t\n]+\\)"
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (2 'italic prepend))
       ("\\([@\\][cp]\\)[ \t\n]+\\([^ \t\n]+\\)"
-       (1 font-lock-keyword-face prepend)
+       (1 font-lock-pseudo-keyword-face prepend)
        (2 'underline prepend)))))
 
 ;;; templates ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
